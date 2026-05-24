@@ -32,7 +32,6 @@ non terminal expr;
 /* ========================================================================= */
 
 /* TODO 1: Declare a precedência para resolver a ambiguidade matemática. */
-/* Dica: O operador mais embaixo tem a MAIOR precedência!                */
 precedence left REL_OP;
 precedence left ADD_OP;
 precedence left MUL_OP;
@@ -68,7 +67,9 @@ if_stmt ::= IF LPAREN expr RPAREN THEN block_stmt
 
 while_stmt ::= WHILE LPAREN expr RPAREN block_stmt ;
 
-block_stmt ::= LBRACE stmt_list RBRACE ;
+block_stmt ::= LBRACE stmt_list RBRACE 
+             | LBRACE RBRACE
+             ;
 
 null_stmt ::= SEMI ;
 
